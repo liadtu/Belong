@@ -1,11 +1,13 @@
-package test;
+package belong.test;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import java.io.IOException;
 import java.net.URL;
@@ -13,13 +15,13 @@ import java.net.URL;
 public class BaseTest {
 
     AppiumDriver<WebElement> driver;
-    String platform = "IOS";
 
+    @Parameters({"platform"})
     @BeforeClass
-    public void configDriver() throws IOException {
+    public void setup(String platform) throws IOException {
         DesiredCapabilities cap = new DesiredCapabilities();
         switch (platform) {
-            case "IOS":
+            case "iOS":
                 cap.setCapability("platformName", "iOS");
                 cap.setCapability("deviceName", "iPhone");
                 cap.setCapability("version", "14.6");

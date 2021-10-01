@@ -26,7 +26,7 @@
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
         <version>7.4.0</version>
-        <scope>test</scope>
+        <scope>belong.test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
     <dependency>
@@ -51,7 +51,7 @@
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-core</artifactId>
         <version>2.2</version>
-        <scope>test</scope>
+        <scope>belong.test</scope>
     </dependency>
     </dependencies>
     <build>
