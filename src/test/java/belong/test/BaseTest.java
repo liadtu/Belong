@@ -6,6 +6,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
@@ -14,12 +15,13 @@ import java.net.URL;
 
 public class BaseTest {
 
-    AppiumDriver<WebElement> driver;
+    AppiumDriver<MobileElement> driver;
 
     @Parameters({"platform"})
     @BeforeClass
-    public void setup(String platform) throws IOException {
+    public void setup(ITestContext testContext, String platform) throws IOException {
         DesiredCapabilities cap = new DesiredCapabilities();
+
         switch (platform) {
             case "iOS":
                 cap.setCapability("platformName", "iOS");

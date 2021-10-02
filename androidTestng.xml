@@ -5,9 +5,10 @@
         <listener class-name="utilities.ListenerClass"/>
     </listeners>
 
-    <test name="Belong app - iOS platform">
+    <test name="Belong app - Android platform">
         <parameter name="platform" value="Android"/>
         <packages>
+            <package name="belong.test"/>
         </packages>
     </test> <!-- Test -->
 

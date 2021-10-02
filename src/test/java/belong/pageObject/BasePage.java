@@ -8,10 +8,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
-    AppiumDriver<WebElement> driver;
-    WebDriverWait wait = new WebDriverWait(driver, 10);
+    AppiumDriver<MobileElement> driver;
+    WebDriverWait wait;
 
-    public BasePage(AppiumDriver<WebElement> driver) {
+    {
+        assert false;
+        wait = new WebDriverWait(driver, 10);
+    }
+
+    public BasePage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
     }
 
