@@ -6,11 +6,20 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import io.qameta.allure.Step;
 
+import java.util.List;
+
 public class MainPage extends BasePage {
 
     public MainPage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
+
+    @AndroidFindBy(id ="com.belongtail.belong:id/text_tutorial_top")
+    @iOSXCUITFindBy()
+    protected MobileElement belongAppTutorialPopupTitle;
+    @AndroidFindBy(className = "android.widget.Button")
+    @iOSXCUITFindBy()
+    protected List<MobileElement> belongAppTutorialButtons;
 
     @AndroidFindBy(id = "com.belongtail.belong:id/text_view_minidash_header")
     @iOSXCUITFindBy()
@@ -34,6 +43,21 @@ public class MainPage extends BasePage {
     @iOSXCUITFindBy()
     protected MobileElement searchField;
 
+
+    @Step("Check if belong app tutorial popup title is displayed")
+    public boolean belongAppTutorialPopupTitleIsDisplayed(){
+        return isDisplayed(belongAppTutorialPopupTitle);
+    }
+
+    @Step("Click on button from belong app tutorial popup : {button}")
+    public void clickOnBelongAppTutorialButton(String button) {
+        for (MobileElement element : belongAppTutorialButtons) {
+            if (getText(element).equals(button)) {
+                click(element);
+                break;
+            }
+        }
+    }
 
     @Step("Return the user name")
     public String userName() {

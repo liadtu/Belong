@@ -1,12 +1,13 @@
-package belong.pageObject;
+package belong.pageObject.header;
 
+import belong.pageObject.BasePage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
-public class inboxPage extends BasePage{
-    public inboxPage(AppiumDriver<MobileElement> driver) {
+public class InboxPage extends BasePage {
+    public InboxPage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
 

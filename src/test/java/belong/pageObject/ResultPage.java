@@ -8,8 +8,8 @@ import io.qameta.allure.Step;
 
 import java.util.List;
 
-public class resultPage extends BasePage {
-    public resultPage(AppiumDriver<MobileElement> driver) {
+public class ResultPage extends BasePage {
+    public ResultPage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
 

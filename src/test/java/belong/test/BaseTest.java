@@ -1,17 +1,24 @@
 package belong.test;
 
+import belong.pageObject.MainPage;
+import belong.pageObject.login.LoginPage;
+import belong.pageObject.login.PhoneAuthentication;
+import belong.pageObject.login.SignupPage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import org.openqa.selenium.WebElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import org.testng.ITestContext;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
@@ -48,5 +55,30 @@ public class BaseTest {
 
                 break;
         }
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    @BeforeClass
+    @Step("Create new user and enter to the system")
+    public void signup() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.clickOnButton("SIGN UP, IT'S FREE");
+        SignupPage signupPage = new SignupPage(driver);
+        signupPage.clickOnTermsPopupButton("I agree");
+        signupPage.fillSignupForm("Liadtobi");
+        signupPage.clickOnGotItButton();
+        PhoneAuthentication phoneAuthentication = new PhoneAuthentication(driver);
+        Assert.assertEquals(phoneAuthentication.phoneAuthenticationTitle(), "Phone Authentication");
+        phoneAuthentication.clickOnSkipButton();
+        MainPage mainPage = new MainPage(driver);
+        if (mainPage.belongAppTutorialPopupTitleIsDisplayed()) {
+            mainPage.clickOnBelongAppTutorialButton("WATCH LATER");
+        }
+    }
+
+    @AfterClass
+    public void tearDown(){
+        driver.resetApp();
+        driver.quit();
     }
 }

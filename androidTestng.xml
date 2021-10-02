@@ -7,9 +7,9 @@
 
     <test name="Belong app - Android platform">
         <parameter name="platform" value="Android"/>
-        <packages>
-            <package name="belong.test"/>
-        </packages>
+        <classes>
+            <class name="belong.test.UserTest"/>
+        </classes>
     </test> <!-- Test -->
 
 </suite> <!-- Suite -->

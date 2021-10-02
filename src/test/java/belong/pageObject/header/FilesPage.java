@@ -1,13 +1,14 @@
-package belong.pageObject;
+package belong.pageObject.header;
 
+import belong.pageObject.BasePage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import io.qameta.allure.Step;
 
-public class filesPage extends BasePage {
-    public filesPage(AppiumDriver<MobileElement> driver) {
+public class FilesPage extends BasePage {
+    public FilesPage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
 

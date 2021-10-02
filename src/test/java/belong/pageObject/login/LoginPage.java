@@ -1,5 +1,6 @@
-package belong.pageObject;
+package belong.pageObject.login;
 
+import belong.pageObject.BasePage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -15,12 +16,13 @@ public class LoginPage extends BasePage {
 
     @AndroidFindBy(className = "android.widget.Button")
     @iOSXCUITFindBy()
-    protected List<MobileElement> buttonsList;
+    protected List<MobileElement> loginButtons;
 
     @Step("Click on button: {button}")
     public void clickOnButton(String button) {
-        for (MobileElement element : buttonsList) {
-            if (getText(element).equals(button)) {
+        waitForElementClickable(loginButtons.get(0));
+        for (MobileElement element : loginButtons){
+            if (getText(element).equals(button)){
                 click(element);
                 break;
             }
