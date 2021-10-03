@@ -1,10 +1,11 @@
-package belong.pageObject.header;
+package belongCancerApp.pageObject.header;
 
-import belong.pageObject.BasePage;
+import belongCancerApp.pageObject.BasePage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import io.qameta.allure.Step;
 
 public class InboxPage extends BasePage {
     public InboxPage(AppiumDriver<MobileElement> driver) {
@@ -17,4 +18,15 @@ public class InboxPage extends BasePage {
     @AndroidFindBy(accessibility = "Navigate up")
     @iOSXCUITFindBy()
     protected MobileElement backButton;
+
+
+    @Step("Return the text of the inbox page title")
+    public String inboxTitle() {
+        return getText(inboxTitle);
+    }
+
+    @Step("Click on back button")
+    public void clickOnBackButton() {
+        click(backButton);
+    }
 }

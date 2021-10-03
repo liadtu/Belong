@@ -1,9 +1,9 @@
-package belong.test;
+package belongCancerApp.test;
 
-import belong.pageObject.MainPage;
-import belong.pageObject.login.LoginPage;
-import belong.pageObject.login.PhoneAuthentication;
-import belong.pageObject.login.SignupPage;
+import belongCancerApp.pageObject.MainPage;
+import belongCancerApp.pageObject.login.LoginPage;
+import belongCancerApp.pageObject.login.PhoneAuthentication;
+import belongCancerApp.pageObject.login.SignupPage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -74,10 +74,11 @@ public class BaseTest {
         if (mainPage.belongAppTutorialPopupTitleIsDisplayed()) {
             mainPage.clickOnBelongAppTutorialButton("WATCH LATER");
         }
+        Assert.assertEquals(mainPage.userName(), "Hi Liadtobi");
     }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         driver.resetApp();
         driver.quit();
     }

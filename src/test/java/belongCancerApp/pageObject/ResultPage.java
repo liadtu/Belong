@@ -1,4 +1,4 @@
-package belong.pageObject;
+package belongCancerApp.pageObject;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;

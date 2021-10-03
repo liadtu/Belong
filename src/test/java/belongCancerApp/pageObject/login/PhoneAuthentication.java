@@ -1,6 +1,6 @@
-package belong.pageObject.login;
+package belongCancerApp.pageObject.login;
 
-import belong.pageObject.BasePage;
+import belongCancerApp.pageObject.BasePage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;

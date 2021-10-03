@@ -1,6 +1,6 @@
-package belong.pageObject.login;
+package belongCancerApp.pageObject.login;
 
-import belong.pageObject.BasePage;
+import belongCancerApp.pageObject.BasePage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -63,7 +63,7 @@ public class SignupPage extends BasePage {
     @Step("Fill the signup form")
     public void fillSignupForm(String nickname) {
         click(userTypeInput);
-        waitForElementVisibility(userTypesList.get(0));
+        waitForElementClickable(userTypesList.get(0));
         click(userTypesList.get(userTypesList.size() - 1));
         click(cancerTypeInput);
         waitForElementVisibility(cancerTypesList.get(0));

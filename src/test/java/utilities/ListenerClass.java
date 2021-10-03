@@ -1,5 +1,7 @@
 package utilities;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -14,7 +16,7 @@ import java.time.format.DateTimeFormatter;
 public class ListenerClass extends TestListenerAdapter implements ITestListener {
 
     @Attachment
-    public byte[] captureScreenshot(WebDriver driver) {
+    public byte[] captureScreenshot(AppiumDriver<MobileElement> driver) {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
@@ -27,9 +29,8 @@ public class ListenerClass extends TestListenerAdapter implements ITestListener 
         System.out.println("Test " + result.getName() + " Failed");
         Object webDriverAttribute = result.getTestContext().getAttribute("WebDriver");
         if (webDriverAttribute instanceof WebDriver) {
-            captureScreenshot((WebDriver) webDriverAttribute);
-            AllureAttachment.attachScreenshot((WebDriver) webDriverAttribute);
-            AllureAttachment.getPageSource((WebDriver) webDriverAttribute);
+            captureScreenshot((AppiumDriver<MobileElement>) webDriverAttribute);
+            AllureAttachment.attachScreenshot((AppiumDriver<MobileElement>) webDriverAttribute);
         }
     }
 

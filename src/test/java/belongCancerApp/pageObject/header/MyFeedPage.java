@@ -1,6 +1,6 @@
-package belong.pageObject.header;
+package belongCancerApp.pageObject.header;
 
-import belong.pageObject.BasePage;
+import belongCancerApp.pageObject.BasePage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -18,7 +18,7 @@ public class MyFeedPage extends BasePage {
     @AndroidFindBy(accessibility = "Navigate up")
     @iOSXCUITFindBy()
     protected MobileElement backButton;
-    @AndroidFindBy(id = "com.belongtail.belong:id/action_done_save_profile\n")
+    @AndroidFindBy(id = "com.belongtail.belong:id/action_done_save_profile")
     @iOSXCUITFindBy()
     protected MobileElement saveButton;
 

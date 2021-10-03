@@ -1,4 +1,4 @@
-package belong.pageObject;
+package belongCancerApp.pageObject;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -14,7 +14,7 @@ public class MainPage extends BasePage {
         super(driver);
     }
 
-    @AndroidFindBy(id ="com.belongtail.belong:id/text_tutorial_top")
+    @AndroidFindBy(id = "com.belongtail.belong:id/text_tutorial_top")
     @iOSXCUITFindBy()
     protected MobileElement belongAppTutorialPopupTitle;
     @AndroidFindBy(className = "android.widget.Button")
@@ -45,7 +45,7 @@ public class MainPage extends BasePage {
 
 
     @Step("Check if belong app tutorial popup title is displayed")
-    public boolean belongAppTutorialPopupTitleIsDisplayed(){
+    public boolean belongAppTutorialPopupTitleIsDisplayed() {
         return isDisplayed(belongAppTutorialPopupTitle);
     }
 
@@ -76,6 +76,9 @@ public class MainPage extends BasePage {
                 break;
             case "Treatment":
                 click(treatmentButton);
+                if (belongAppTutorialPopupTitleIsDisplayed()) {
+                    clickOnBelongAppTutorialButton("WATCH LATER");
+                }
                 break;
             case "Inbox":
                 click(inboxButton);

@@ -8,7 +8,7 @@
     <test name="Belong app - iOS platform">
         <parameter name="platform" value="iOS"/>
         <classes>
-            <class name="belong.test.UserTest"/>
+            <class name="belongCancerApp.test.MainTest"/>
         </classes>
     </test> <!-- Test -->
 

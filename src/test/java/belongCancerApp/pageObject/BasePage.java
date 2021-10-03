@@ -1,15 +1,12 @@
-package belong.pageObject;
+package belongCancerApp.pageObject;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
 
 public class BasePage {
     AppiumDriver<MobileElement> driver;
@@ -26,7 +23,6 @@ public class BasePage {
     }
 
     protected void fillText(MobileElement el, String text) {
-//        wait.until(ExpectedConditions.visibilityOf(el));
         waitForElementClickable(el);
         el.clear();
         el.sendKeys(text);
@@ -34,7 +30,6 @@ public class BasePage {
     }
 
     protected String getText(MobileElement el) {
-//        wait.until(ExpectedConditions.visibilityOf(el));
         waitForElementVisibility(el);
         return el.getText();
     }
@@ -45,7 +40,6 @@ public class BasePage {
     }
 
     protected boolean isDisplayed(MobileElement el){
-        waitForElementVisibility(el);
         return el.isDisplayed();
     }
 
