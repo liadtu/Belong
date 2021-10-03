@@ -43,9 +43,6 @@ public class SignupPage extends BasePage {
     @iOSXCUITFindBy()
     protected MobileElement finishButton;
 
-    @AndroidFindBy(id = "com.belongtail.belong:id/text_view_congrats_header")
-    @iOSXCUITFindBy()
-    protected MobileElement createUserPopupTitle;
     @AndroidFindBy(id = "com.belongtail.belong:id/layout_buttons_sign_in")
     @iOSXCUITFindBy()
     protected MobileElement gotItButton;
@@ -74,11 +71,6 @@ public class SignupPage extends BasePage {
         click(nicknameField);
         fillText(nicknameField, nickname);
         click(finishButton);
-    }
-
-    @Step("Return the text of create user popup")
-    public String createUserPopupTitle() {
-        return getText(createUserPopupTitle);
     }
 
     @Step("Click on got it button")
