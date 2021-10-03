@@ -1,4 +1,4 @@
-package belongCancerApp.pageObject.header;
+package belongCancerApp.pageObject.topMenu;
 
 import belongCancerApp.pageObject.BasePage;
 import io.appium.java_client.AppiumDriver;

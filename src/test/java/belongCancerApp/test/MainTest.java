@@ -2,10 +2,10 @@ package belongCancerApp.test;
 
 import belongCancerApp.pageObject.MainPage;
 import belongCancerApp.pageObject.ResultPage;
-import belongCancerApp.pageObject.header.FilesPage;
-import belongCancerApp.pageObject.header.InboxPage;
-import belongCancerApp.pageObject.header.MyFeedPage;
-import belongCancerApp.pageObject.header.TreatmentPage;
+import belongCancerApp.pageObject.topMenu.FilesPage;
+import belongCancerApp.pageObject.topMenu.InboxPage;
+import belongCancerApp.pageObject.topMenu.MyFeedPage;
+import belongCancerApp.pageObject.topMenu.TreatmentPage;
 import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
