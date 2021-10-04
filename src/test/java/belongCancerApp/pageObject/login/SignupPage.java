@@ -60,6 +60,7 @@ public class SignupPage extends BasePage {
     @Step("Fill the signup form")
     public void fillSignupForm(String nickname) {
         click(userTypeInput);
+        sleep(2000);
         waitForElementClickable(userTypesList.get(0));
         click(userTypesList.get(userTypesList.size() - 1));
         click(cancerTypeInput);
